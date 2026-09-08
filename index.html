@@ -42,38 +42,6 @@ img{max-width:100%}
   --col:1180px;
   --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px; --s7:136px;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --ground:#0C100E;
-    --surface:#141A17;
-    --surface-2:#1B221E;
-    --ink:#EDF2EF;
-    --muted:#8A9691;
-    --faint:#5C6862;
-    --line:#232B27;
-    --line-strong:#36403A;
-    --accent:#6FC79A;
-    --accent-deep:#B8E6CC;
-    --accent-mid:#8FD4AF;
-    --accent-soft:#16241C;
-    --good:#54C285;
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#0C100E;
-  --surface:#141A17;
-  --surface-2:#1B221E;
-  --ink:#EDF2EF;
-  --muted:#8A9691;
-  --faint:#5C6862;
-  --line:#232B27;
-  --line-strong:#36403A;
-  --accent:#6FC79A;
-  --accent-deep:#B8E6CC;
-  --accent-mid:#8FD4AF;
-  --accent-soft:#16241C;
-  --good:#54C285;
-}
 
 *{box-sizing:border-box}
 body{
@@ -622,6 +590,61 @@ footer a:hover{color:var(--accent)}
 
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
+/* ---------- scroll cards ---------- */
+.scroll-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);align-self:stretch;min-height:520px}
+.sc-col{position:relative;overflow:hidden;height:520px}
+.sc-col::before,.sc-col::after{
+  content:"";position:absolute;left:0;right:0;height:80px;z-index:2;
+  pointer-events:none;
+}
+.sc-col::before{top:0;background:linear-gradient(to bottom,var(--ground) 0%,transparent 100%)}
+.sc-col::after{bottom:0;background:linear-gradient(to top,var(--ground) 0%,transparent 100%)}
+.sc-track{display:flex;flex-direction:column;gap:var(--s2)}
+.sc-track-up{animation:scroll-up 35s linear infinite}
+.sc-track-down{animation:scroll-down 40s linear infinite}
+.sc-track-up-slow{animation:scroll-up 45s linear infinite}
+.sc-card{
+  border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);padding:18px 16px;
+  display:flex;flex-direction:column;gap:8px;
+  flex-shrink:0;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.sc-card:hover{
+  border-color:color-mix(in srgb,var(--accent-mid) 40%,transparent);
+  box-shadow:0 8px 24px rgba(14,42,30,.1);
+  transform:translateY(-2px);
+}
+.sc-card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.sc-col-label{
+  font-family:var(--mono);font-size:9px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-mid);
+}
+.sc-size{
+  font-family:var(--mono);font-size:9px;letter-spacing:.06em;
+  padding:3px 8px;border-radius:100px;
+  border:1px solid var(--line);color:var(--faint);background:var(--surface-2);
+  white-space:nowrap;
+}
+.sc-size-lg{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.sc-title{
+  font-family:var(--display);font-size:16px;font-weight:400;
+  color:var(--accent-deep);margin:0;line-height:1.3;letter-spacing:-.005em;
+}
+.sc-desc{
+  font-size:12.5px;color:var(--muted);line-height:1.55;margin:0;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+@keyframes scroll-up{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+@keyframes scroll-down{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){
+  .sc-track-up,.sc-track-down,.sc-track-up-slow{animation:none}
+}
+@media(max-width:900px){
+  .scroll-cards{display:none}
+  .hero-grid{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -658,23 +681,206 @@ footer a:hover{color:var(--accent)}
         </div>
       </div>
 
-      <div class="specimen">
-        <div class="spec-head"><span>Recent sends</span><span>Open rate</span></div>
-        <div class="spec-row">
-          <div class="spec-subject"><span class="spec-flag"></span>Tuesday Drop: three picks, one restock</div>
-          <div class="spec-rate">39.82%</div>
+      <div class="scroll-cards">
+        <!-- Column 1 — Build -->
+        <div class="sc-col">
+          <div class="sc-track sc-track-up">
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size sc-size-lg">Large</span></div>
+              <div class="sc-title">9-Core Flow Build</div>
+              <p class="sc-desc">Verra + Lumen: 18 flows across two brands &#8212; welcome, abandonment, post-purchase, win-back &#8212; each with a written decision log.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">Subscription Flow Suite</div>
+              <p class="sc-desc">Pre-renewal, 4-way cancellation save, and payment recovery &#8212; built to match a live job posting&#8217;s exact ask.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">Segment Library</div>
+              <p class="sc-desc">42 segments: 22 Verra + 20 Lumen, every segment tied to a named flow or campaign, none built &#8220;just in case.&#8221;</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">SMS + Web Push Layer</div>
+              <p class="sc-desc">10 SMS touchpoints + 2 web push flows, TCPA-compliant, quiet hours and STOP handling built in.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">Exit Condition + Smart Sending Audit</div>
+              <p class="sc-desc">Found flows missing exit conditions and a Smart Sending window conflict across both brands.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">List vs Segment + Filter/Split Audit</div>
+              <p class="sc-desc">A decision framework for when something should be a list vs a dynamic segment, and filter vs split logic.</p>
+            </div>
+            <!-- duplicate for seamless loop -->
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size sc-size-lg">Large</span></div>
+              <div class="sc-title">9-Core Flow Build</div>
+              <p class="sc-desc">Verra + Lumen: 18 flows across two brands &#8212; welcome, abandonment, post-purchase, win-back &#8212; each with a written decision log.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">Subscription Flow Suite</div>
+              <p class="sc-desc">Pre-renewal, 4-way cancellation save, and payment recovery &#8212; built to match a live job posting&#8217;s exact ask.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">Segment Library</div>
+              <p class="sc-desc">42 segments: 22 Verra + 20 Lumen, every segment tied to a named flow or campaign, none built &#8220;just in case.&#8221;</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">SMS + Web Push Layer</div>
+              <p class="sc-desc">10 SMS touchpoints + 2 web push flows, TCPA-compliant, quiet hours and STOP handling built in.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">Exit Condition + Smart Sending Audit</div>
+              <p class="sc-desc">Found flows missing exit conditions and a Smart Sending window conflict across both brands.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Build</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">List vs Segment + Filter/Split Audit</div>
+              <p class="sc-desc">A decision framework for when something should be a list vs a dynamic segment, and filter vs split logic.</p>
+            </div>
+          </div>
         </div>
-        <div class="spec-row">
-          <div class="spec-subject"><span class="spec-flag"></span>You left something &#8212; still yours for 24h</div>
-          <div class="spec-rate">37.10%</div>
+
+        <!-- Column 2 — Strategy -->
+        <div class="sc-col">
+          <div class="sc-track sc-track-down">
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size sc-size-lg">Large</span></div>
+              <div class="sc-title">Retention Audit &#8212; Real Brand</div>
+              <p class="sc-desc">Full diagnosis-plus-fix audit on a live DTC brand, built as a cold-outreach sample.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">Combined Retention + Deliverability Audit</div>
+              <p class="sc-desc">One brand, two lenses in a single report &#8212; my strongest single outreach piece.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">RFM Model + Replenishment Cycle</div>
+              <p class="sc-desc">RFM segmentation on Verra&#8217;s list, plus a repeat-purchase timing model for a subscription brand.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">Monthly Retention Report Template</div>
+              <p class="sc-desc">The recurring report a retainer client would actually see every month.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">90-Day Calendar + Content Pillars</div>
+              <p class="sc-desc">Full campaign calendar for both brands with a flow-vs-campaign overlap check.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">Discount Dependency + Funnel Economics</div>
+              <p class="sc-desc">How much each brand leans on discounting, plus acquisition-vs-retention cost math.</p>
+            </div>
+            <!-- duplicate for seamless loop -->
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size sc-size-lg">Large</span></div>
+              <div class="sc-title">Retention Audit &#8212; Real Brand</div>
+              <p class="sc-desc">Full diagnosis-plus-fix audit on a live DTC brand, built as a cold-outreach sample.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">Combined Retention + Deliverability Audit</div>
+              <p class="sc-desc">One brand, two lenses in a single report &#8212; my strongest single outreach piece.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">RFM Model + Replenishment Cycle</div>
+              <p class="sc-desc">RFM segmentation on Verra&#8217;s list, plus a repeat-purchase timing model for a subscription brand.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">Monthly Retention Report Template</div>
+              <p class="sc-desc">The recurring report a retainer client would actually see every month.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">90-Day Calendar + Content Pillars</div>
+              <p class="sc-desc">Full campaign calendar for both brands with a flow-vs-campaign overlap check.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Strategy</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">Discount Dependency + Funnel Economics</div>
+              <p class="sc-desc">How much each brand leans on discounting, plus acquisition-vs-retention cost math.</p>
+            </div>
+          </div>
         </div>
-        <div class="spec-row">
-          <div class="spec-subject"><span class="spec-flag"></span>It&#8217;s been a while. Here&#8217;s 15% to come back.</div>
-          <div class="spec-rate">34.65%</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-subject"><span class="spec-flag"></span>Welcome &#8212; start here (1 of 4)</div>
-          <div class="spec-rate">41.20%</div>
+
+        <!-- Column 3 — Technical -->
+        <div class="sc-col">
+          <div class="sc-track sc-track-up-slow">
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size sc-size-lg">Large</span></div>
+              <div class="sc-title">Deliverability Audit + DNS Recon</div>
+              <p class="sc-desc">SPF/DKIM/DMARC audit on a real brand, plus DNS recon across 10 more &#8212; the check that comes before any send.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">Events API Pusher + Postman Collection</div>
+              <p class="sc-desc">Custom script pushing events into Klaviyo via API, packaged as a reusable collection.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">GA4 Reconciliation + UTM System</div>
+              <p class="sc-desc">Explains why GA4 and Klaviyo revenue numbers never match, plus a UTM convention used on both brands.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">4 Brand Teardowns</div>
+              <p class="sc-desc">2 supplement + 2 skincare brands &#8212; what they send, what&#8217;s missing, what I&#8217;d test.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">Metafield + SMS Consent Audit</div>
+              <p class="sc-desc">Where Shopify data isn&#8217;t reaching Klaviyo, and a compliance check on SMS opt-ins.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">5x Klaviyo Certified + GA4</div>
+              <p class="sc-desc">The credentials strip &#8212; sits at the top of the grid, not buried in it.</p>
+            </div>
+            <!-- duplicate for seamless loop -->
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size sc-size-lg">Large</span></div>
+              <div class="sc-title">Deliverability Audit + DNS Recon</div>
+              <p class="sc-desc">SPF/DKIM/DMARC audit on a real brand, plus DNS recon across 10 more &#8212; the check that comes before any send.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">Events API Pusher + Postman Collection</div>
+              <p class="sc-desc">Custom script pushing events into Klaviyo via API, packaged as a reusable collection.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Medium</span></div>
+              <div class="sc-title">GA4 Reconciliation + UTM System</div>
+              <p class="sc-desc">Explains why GA4 and Klaviyo revenue numbers never match, plus a UTM convention used on both brands.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">4 Brand Teardowns</div>
+              <p class="sc-desc">2 supplement + 2 skincare brands &#8212; what they send, what&#8217;s missing, what I&#8217;d test.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">Metafield + SMS Consent Audit</div>
+              <p class="sc-desc">Where Shopify data isn&#8217;t reaching Klaviyo, and a compliance check on SMS opt-ins.</p>
+            </div>
+            <div class="sc-card">
+              <div class="sc-card-top"><span class="sc-col-label">Technical</span><span class="sc-size">Small</span></div>
+              <div class="sc-title">5x Klaviyo Certified + GA4</div>
+              <p class="sc-desc">The credentials strip &#8212; sits at the top of the grid, not buried in it.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -877,6 +1083,25 @@ footer a:hover{color:var(--accent)}
       <span class="eyebrow">Results</span>
       <h2>The number that moved: <em>open rate</em>.</h2>
       <p class="sec-sub">Managing a 64,000+ contact list on Beehiiv, segmentation work lifted the open rate across the board.</p>
+    </div>
+    <div class="specimen" style="margin-bottom:var(--s4)">
+      <div class="spec-head"><span>Recent sends</span><span>Open rate</span></div>
+      <div class="spec-row">
+        <div class="spec-subject"><span class="spec-flag"></span>Tuesday Drop: three picks, one restock</div>
+        <div class="spec-rate">39.82%</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-subject"><span class="spec-flag"></span>You left something &#8212; still yours for 24h</div>
+        <div class="spec-rate">37.10%</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-subject"><span class="spec-flag"></span>It&#8217;s been a while. Here&#8217;s 15% to come back.</div>
+        <div class="spec-rate">34.65%</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-subject"><span class="spec-flag"></span>Welcome &#8212; start here (1 of 4)</div>
+        <div class="spec-rate">41.20%</div>
+      </div>
     </div>
     <div class="result">
       <div class="bars">
