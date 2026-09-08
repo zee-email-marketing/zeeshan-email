@@ -80,6 +80,7 @@ img{max-width:100%}
   letter-spacing:.02em;transition:color .18s;
 }
 .nav-links a:hover{color:var(--ink)}
+.nav-links a[aria-current="page"]{color:var(--accent);font-weight:500}
 .nav-cta{
   font-size:13px;font-weight:500;text-decoration:none;
   padding:8px 16px;border:1px solid var(--line-strong);border-radius:2px;
@@ -87,7 +88,10 @@ img{max-width:100%}
   white-space:nowrap;
 }
 .nav-cta:hover{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-@media(max-width:820px){.nav-links{display:none}}
+@media(max-width:820px){
+  .nav-links{display:flex;gap:14px;overflow-x:auto;white-space:nowrap;min-width:0}
+  .nav-cta{display:none}
+}
 
 /* ---------- hero ---------- */
 .hero{padding:var(--s6) 0 var(--s5)}
@@ -102,7 +106,7 @@ img{max-width:100%}
 }
 h1{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(42px,7vw,86px);line-height:1.02;
+  font-size:clamp(34px,5.2vw,64px);line-height:1.04;
   letter-spacing:-.015em;margin:0 0 var(--s3);
   text-wrap:balance;max-width:16ch;
 }
@@ -394,7 +398,7 @@ footer a:hover{color:var(--accent)}
 .cs-card{
   border:1px solid var(--line);border-radius:10px;
   background:var(--surface);overflow:hidden;
-  text-align:left;font:inherit;color:inherit;padding:0;
+  text-align:left;font:inherit;color:inherit;text-decoration:none;padding:0;
   cursor:pointer;display:flex;flex-direction:column;
   transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
 }
@@ -603,6 +607,8 @@ footer a:hover{color:var(--accent)}
 .sc-track-up{animation:scroll-up 35s linear infinite}
 .sc-track-down{animation:scroll-down 40s linear infinite}
 .sc-track-up-slow{animation:scroll-up 45s linear infinite}
+.sc-track-up,.sc-track-down,.sc-track-up-slow{animation:none}
+.sc-track > .sc-card:nth-child(n+5){display:none}
 .sc-card{
   border:1px solid var(--line);border-radius:10px;
   background:var(--surface);padding:18px 16px;
@@ -645,6 +651,10 @@ footer a:hover{color:var(--accent)}
   .hero-grid{grid-template-columns:1fr}
 }
 
+/* ---------- tabbed detail sections ---------- */
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
 </style>
 </head>
 <body>
@@ -656,9 +666,9 @@ footer a:hover{color:var(--accent)}
     <a class="brand" href="#top">Zeeshan <em>Alam</em></a>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#work">Experience</a>
-      <a href="#caps">Capabilities</a>
-      <a href="#results">Results</a>
+      <a href="#work" data-tab="work">Experience</a>
+      <a href="#caps" data-tab="caps">Capabilities</a>
+      <a href="#results" data-tab="results">Results</a>
       <a href="#projects">Projects</a>
       <a href="#cases">Case studies</a>
     </div>
@@ -956,7 +966,7 @@ footer a:hover{color:var(--accent)}
 </section>
 
 <!-- EXPERIENCE -->
-<section id="work">
+<section id="work" class="tab-panel">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Experience</span>
@@ -1041,7 +1051,7 @@ footer a:hover{color:var(--accent)}
 </section>
 
 <!-- CAPABILITIES -->
-<section id="caps">
+<section id="caps" class="tab-panel">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Capabilities</span>
@@ -1077,7 +1087,7 @@ footer a:hover{color:var(--accent)}
 </section>
 
 <!-- RESULTS -->
-<section id="results">
+<section id="results" class="tab-panel">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Results</span>
@@ -1331,6 +1341,28 @@ footer a:hover{color:var(--accent)}
         </div>
       </button>
 
+      <a class="cs-card" href="https://app.notion.com/p/ZeeWear-Win-Back-Flow-3905b31cb940809988fac05e8abd0212" target="_blank" rel="noopener">
+        <div class="cs-banner">
+          <div class="cs-banner-top">
+            <span class="cs-niche">Fictional Apparel Brand</span>
+            <span class="cs-arrow">&#8599;</span>
+          </div>
+          <div>
+            <div class="cs-metric">Win Back</div>
+            <div class="cs-metric-l">Flow strategy and sequence breakdown</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <h3 class="cs-title">Win Back Flow of Fictional Apparel Brand</h3>
+          <p class="cs-sum">A documented win-back flow for re-engaging lapsed apparel customers with behaviour-based timing and messaging.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Klaviyo</span>
+            <span class="cs-tag">Win-back</span>
+            <span class="cs-tag">Notion</span>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -1543,6 +1575,19 @@ footer a:hover{color:var(--accent)}
   });
   document.querySelectorAll('[data-close]').forEach(function(el){
     el.addEventListener('click', hide);
+  });
+  document.querySelectorAll('[data-tab]').forEach(function(tab){
+    tab.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelectorAll('.tab-panel').forEach(function(panel){
+        panel.classList.toggle('active', panel.id === tab.getAttribute('data-tab'));
+      });
+      document.querySelectorAll('[data-tab]').forEach(function(item){
+        item.setAttribute('aria-current', item === tab ? 'page' : 'false');
+      });
+      var panel = document.getElementById(tab.getAttribute('data-tab'));
+      if(panel) panel.scrollIntoView({behavior:'smooth', block:'start'});
+    });
   });
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') hide();
