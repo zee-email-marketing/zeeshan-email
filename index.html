@@ -88,6 +88,13 @@ img{max-width:100%}
   white-space:nowrap;
 }
 .nav-cta:hover{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.linkedin-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#0A66C2;color:#fff;font-family:Arial,sans-serif;font-weight:700;
+  font-size:20px;line-height:1;border-radius:2px;padding:2px 6px;
+  text-decoration:none;transition:background .18s,transform .18s;
+}
+.linkedin-cta:hover{background:#084f96;transform:translateY(-1px)}
 @media(max-width:820px){
   .nav-links{display:flex;gap:14px;overflow-x:auto;white-space:nowrap;min-width:0}
   .nav-cta{display:none}
@@ -130,9 +137,31 @@ h1 em{font-style:italic;color:var(--accent)}
 /* ---------- specimen ---------- */
 .hero-grid{
   display:grid;grid-template-columns:1.15fr .85fr;
-  gap:var(--s5);align-items:end;
+  gap:var(--s5);align-items:end;position:relative;
 }
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:var(--s4)}}
+.hero-name{
+  font-family:var(--display);font-size:clamp(24px,3vw,36px);
+  line-height:1.1;color:var(--accent-deep);margin:0 0 var(--s2);
+}
+.cards-guide{
+  position:absolute;right:18px;top:-48px;z-index:3;
+  display:flex;align-items:flex-end;gap:10px;
+  color:var(--accent);font-family:var(--mono);font-size:10px;
+  letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+}
+.cards-guide::after{
+  content:"";display:block;width:84px;height:48px;
+  border-top:1px solid var(--accent);border-right:1px solid var(--accent);
+  border-radius:0 48px 0 0;transform:rotate(22deg);transform-origin:bottom right;
+}
+.cards-guide::before{
+  content:"";position:absolute;right:0;bottom:-1px;
+  width:7px;height:7px;border-top:1px solid var(--accent);border-right:1px solid var(--accent);
+  transform:rotate(112deg);
+}
+.cards-guide:hover{color:var(--accent-deep)}
+@media(max-width:900px){.cards-guide{display:none}}
 
 .specimen{
   border:1px solid var(--line);background:var(--surface);
@@ -595,14 +624,17 @@ footer a:hover{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
 /* ---------- scroll cards ---------- */
-.scroll-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);align-self:stretch;min-height:520px}
+.scroll-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);align-self:stretch;
+  min-height:520px;padding:24px;background:#0E2A1E;border-radius:10px;
+}
 .sc-col{position:relative;overflow:hidden;height:520px}
 .sc-col::before,.sc-col::after{
   content:"";position:absolute;left:0;right:0;height:80px;z-index:2;
   pointer-events:none;
 }
-.sc-col::before{top:0;background:linear-gradient(to bottom,var(--ground) 0%,transparent 100%)}
-.sc-col::after{bottom:0;background:linear-gradient(to top,var(--ground) 0%,transparent 100%)}
+.sc-col::before{top:0;background:linear-gradient(to bottom,#0E2A1E 0%,transparent 100%)}
+.sc-col::after{bottom:0;background:linear-gradient(to top,#0E2A1E 0%,transparent 100%)}
 .sc-track{display:flex;flex-direction:column;gap:var(--s2)}
 .sc-track-up{animation:scroll-up 35s linear infinite}
 .sc-track-down{animation:scroll-down 40s linear infinite}
@@ -610,35 +642,35 @@ footer a:hover{color:var(--accent)}
 .sc-track-up,.sc-track-down,.sc-track-up-slow{animation:none}
 .sc-track > .sc-card:nth-child(n+5){display:none}
 .sc-card{
-  border:1px solid var(--line);border-radius:10px;
-  background:var(--surface);padding:18px 16px;
+  border:1px solid rgba(255,255,255,.28);border-radius:8px;
+  background:transparent;color:#fff;padding:18px 16px;
   display:flex;flex-direction:column;gap:8px;
   flex-shrink:0;
   transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
 }
 .sc-card:hover{
-  border-color:color-mix(in srgb,var(--accent-mid) 40%,transparent);
-  box-shadow:0 8px 24px rgba(14,42,30,.1);
+  border-color:rgba(255,255,255,.8);
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
   transform:translateY(-2px);
 }
 .sc-card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .sc-col-label{
   font-family:var(--mono);font-size:9px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--accent-mid);
+  text-transform:uppercase;color:rgba(255,255,255,.72);
 }
 .sc-size{
   font-family:var(--mono);font-size:9px;letter-spacing:.06em;
   padding:3px 8px;border-radius:100px;
-  border:1px solid var(--line);color:var(--faint);background:var(--surface-2);
+  border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.72);background:transparent;
   white-space:nowrap;
 }
-.sc-size-lg{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.sc-size-lg{border-color:#fff;color:#fff;background:rgba(255,255,255,.1)}
 .sc-title{
   font-family:var(--display);font-size:16px;font-weight:400;
-  color:var(--accent-deep);margin:0;line-height:1.3;letter-spacing:-.005em;
+  color:#fff;margin:0;line-height:1.3;letter-spacing:-.005em;
 }
 .sc-desc{
-  font-size:12.5px;color:var(--muted);line-height:1.55;margin:0;
+  font-size:12.5px;color:rgba(255,255,255,.74);line-height:1.55;margin:0;
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
 }
 @keyframes scroll-up{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
@@ -663,7 +695,7 @@ footer a:hover{color:var(--accent)}
 
 <nav class="nav">
   <div class="nav-in">
-    <a class="brand" href="#top">Zeeshan <em>Alam</em></a>
+    <a class="brand" href="#top">Zee</a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#work" data-tab="work">Experience</a>
@@ -673,6 +705,7 @@ footer a:hover{color:var(--accent)}
       <a href="#cases">Case studies</a>
     </div>
     <a class="nav-cta" href="mailto:alam9763@gmail.com">Get in touch</a>
+    <a class="linkedin-cta" href="https://www.linkedin.com/in/zemailmarketing" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">in</a>
   </div>
 </nav>
 
@@ -683,6 +716,7 @@ footer a:hover{color:var(--accent)}
     <div class="hero-grid">
       <div>
         <div class="status"><span class="dot"></span>Available for email &amp; CRM roles</div>
+        <p class="hero-name">Zeeshan Alam</p>
         <h1>Email Marketing Specialist | <em>Klaviyo Certified</em> | Building <em>retention/lifecycle skills</em>.</h1>
         <p class="lede">Klaviyo-certified email marketing specialist and CRM operations associate. I run the campaigns, automations, and QA that keep a subscriber list healthy — currently supporting a <strong>$100M+ U.S. e-commerce brand</strong>, remotely from Ranchi, India.</p>
         <div class="hero-actions">
@@ -691,7 +725,8 @@ footer a:hover{color:var(--accent)}
         </div>
       </div>
 
-      <div class="scroll-cards">
+      <a class="cards-guide" href="#cases" aria-label="Open case studies">Open the work</a>
+      <a class="scroll-cards" href="#cases" aria-label="Open case studies">
         <!-- Column 1 — Build -->
         <div class="sc-col">
           <div class="sc-track sc-track-up">
@@ -892,7 +927,7 @@ footer a:hover{color:var(--accent)}
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="metrics">
@@ -1517,7 +1552,7 @@ footer a:hover{color:var(--accent)}
 <div class="wrap">
   <section class="contact" id="contact">
     <div class="portrait-wrap" style="margin-bottom:var(--s5)">
-      <img class="portrait" src="zeeshan.jpg" alt="Zeeshan Alam" width="220" height="220">
+      <img class="portrait" src="Passport%20photo.PNG" alt="Zeeshan Alam" width="220" height="220">
       <div>
         <p class="portrait-name">Zeeshan Alam</p>
         <p class="portrait-role">Email Marketing &#183; CRM Operations</p>
