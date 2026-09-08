@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Zeeshan Alam — Klaviyo-certified email marketing specialist and CRM operations associate.">
+<meta name="author" content="Zeeshan Alam">
+<meta property="og:title" content="Zeeshan Alam — Email Marketing &amp; CRM Operations">
+<meta property="og:description" content="I build email programs that convert, and lifecycle flows that retain. Klaviyo certified.">
+<meta property="og:type" content="website">
+<style>
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Zeeshan Alam, Lifecycle Email</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface-2:#F8FAF8;
+  --ink:#1A1D1B;
+  --muted:#525E57;
+  --faint:#8A948E;
+  --line:#E2E8E4;
+  --line-strong:#CBD3CC;
+  --accent:#1B4332;
+  --accent-deep:#0E2A1E;
+  --accent-mid:#2D6A4F;
+  --accent-soft:#F0F4F1;
+  --good:#2D6A4F;
+  --display:"Instrument Serif",ui-serif,Georgia,serif;
+  --body:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --col:1180px;
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px; --s7:136px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0C100E;
+    --surface:#141A17;
+    --surface-2:#1B221E;
+    --ink:#EDF2EF;
+    --muted:#8A9691;
+    --faint:#5C6862;
+    --line:#232B27;
+    --line-strong:#36403A;
+    --accent:#6FC79A;
+    --accent-deep:#B8E6CC;
+    --accent-mid:#8FD4AF;
+    --accent-soft:#16241C;
+    --good:#54C285;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0C100E;
+  --surface:#141A17;
+  --surface-2:#1B221E;
+  --ink:#EDF2EF;
+  --muted:#8A9691;
+  --faint:#5C6862;
+  --line:#232B27;
+  --line-strong:#36403A;
+  --accent:#6FC79A;
+  --accent-deep:#B8E6CC;
+  --accent-mid:#8FD4AF;
+  --accent-soft:#16241C;
+  --good:#54C285;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%}
+
+.wrap{max-width:var(--col);margin:0 auto;padding:0 var(--s3)}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--ground) 88%,transparent);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{
+  max-width:var(--col);margin:0 auto;padding:14px var(--s3);
+  display:flex;align-items:center;gap:var(--s3);
+}
+.brand{
+  font-family:var(--display);font-size:20px;letter-spacing:.01em;
+  text-decoration:none;margin-right:auto;
+}
+.brand em{font-style:italic;color:var(--accent)}
+.nav-links{display:flex;gap:var(--s3);align-items:center}
+.nav-links a{
+  font-size:13px;color:var(--muted);text-decoration:none;
+  letter-spacing:.02em;transition:color .18s;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{
+  font-size:13px;font-weight:500;text-decoration:none;
+  padding:8px 16px;border:1px solid var(--line-strong);border-radius:2px;
+  transition:background .18s,color .18s,border-color .18s;
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+@media(max-width:820px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:var(--s6) 0 var(--s5)}
+.status{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:var(--s4);
+}
+.dot{
+  width:6px;height:6px;border-radius:50%;background:var(--good);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 20%,transparent);
+}
+h1{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(42px,7vw,86px);line-height:1.02;
+  letter-spacing:-.015em;margin:0 0 var(--s3);
+  text-wrap:balance;max-width:16ch;
+}
+h1 em{font-style:italic;color:var(--accent)}
+.lede{
+  font-size:clamp(16px,1.6vw,19px);color:var(--muted);
+  max-width:60ch;margin:0 0 var(--s4);line-height:1.65;
+}
+.lede strong{color:var(--ink);font-weight:500}
+.hero-actions{display:flex;gap:var(--s2);flex-wrap:wrap;align-items:center}
+.btn{
+  font-size:14px;font-weight:500;text-decoration:none;
+  padding:12px 22px;border-radius:2px;transition:all .18s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary{background:var(--ink);color:var(--ground);border:1px solid var(--ink)}
+.btn-primary:hover{background:transparent;color:var(--ink)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);background:var(--surface-2)}
+
+/* ---------- specimen ---------- */
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:var(--s5);align-items:end;
+}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:var(--s4)}}
+
+.specimen{
+  border:1px solid var(--line);background:var(--surface);
+  border-radius:3px;overflow:hidden;
+}
+.spec-head{
+  padding:10px 14px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--faint);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.spec-row{
+  padding:13px 14px;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:1fr auto;gap:var(--s2);
+  align-items:baseline;
+}
+.spec-row:last-child{border-bottom:none}
+.spec-subject{
+  font-size:13.5px;line-height:1.45;color:var(--ink);
+}
+.spec-rate{
+  font-family:var(--mono);font-size:12px;
+  font-variant-numeric:tabular-nums;color:var(--accent);
+  white-space:nowrap;
+}
+.spec-flag{
+  display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--accent);margin-right:7px;vertical-align:middle;
+}
+
+/* ---------- metrics ---------- */
+.metrics{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  margin-top:var(--s6);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+@media(max-width:760px){.metrics{grid-template-columns:repeat(2,1fr)}}
+.metric{
+  padding:var(--s4) var(--s3) var(--s4) 0;
+  border-right:1px solid var(--line);
+}
+.metric:last-child{border-right:none}
+@media(max-width:760px){
+  .metric:nth-child(2){border-right:none}
+  .metric:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+.metric-n{
+  font-family:var(--display);font-size:clamp(32px,4vw,46px);
+  line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums;
+  margin-bottom:10px;
+}
+.metric-l{
+  font-size:13px;color:var(--muted);line-height:1.45;max-width:22ch;
+}
+
+/* ---------- marquee ---------- */
+.marquee{
+  overflow:hidden;border-bottom:1px solid var(--line);
+  padding:var(--s3) 0;
+}
+.marquee-track{
+  display:flex;gap:var(--s4);width:max-content;
+  animation:slide 38s linear infinite;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint);white-space:nowrap;
+}
+.marquee-track span{display:flex;gap:var(--s4)}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* ---------- sections ---------- */
+section{padding:var(--s7) 0}
+.sec-head{margin-bottom:var(--s5);max-width:62ch}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:var(--s3);display:block;
+}
+h2{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(30px,4.4vw,52px);line-height:1.08;
+  letter-spacing:-.012em;margin:0 0 var(--s2);text-wrap:balance;
+}
+h2 em{font-style:italic;color:var(--accent)}
+.sec-sub{font-size:16.5px;color:var(--muted);margin:0;line-height:1.6}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:var(--s5)}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr}}
+.prose p{font-size:16.5px;line-height:1.7;color:var(--muted);margin:0 0 var(--s3);max-width:64ch}
+.prose p strong{color:var(--ink);font-weight:500}
+.facts{display:flex;flex-direction:column;gap:var(--s3)}
+.fact{border-left:2px solid var(--line-strong);padding-left:var(--s2)}
+.fact-k{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:5px;
+}
+.fact-v{font-size:14.5px;line-height:1.5}
+.fact-v small{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+
+/* ---------- timeline ---------- */
+.tl{display:flex;flex-direction:column}
+.tl-item{
+  display:grid;grid-template-columns:150px 1fr;gap:var(--s4);
+  padding:var(--s4) 0;border-top:1px solid var(--line);
+}
+.tl-item:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:760px){.tl-item{grid-template-columns:1fr;gap:var(--s2)}}
+.tl-when{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
+  color:var(--faint);padding-top:6px;
+}
+.tl-role{font-size:19px;font-weight:500;margin:0 0 4px;letter-spacing:-.005em}
+.tl-org{font-size:14px;color:var(--muted);margin:0 0 var(--s2)}
+.tl-list{margin:0 0 var(--s2);padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.tl-list li{
+  font-size:14.5px;color:var(--muted);line-height:1.55;
+  padding-left:18px;position:relative;max-width:66ch;
+}
+.tl-list li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:5px;height:1px;background:var(--line-strong);
+}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;
+  padding:4px 9px;border:1px solid var(--line);border-radius:2px;
+  color:var(--muted);background:var(--surface);
+}
+.chip-hi{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+/* ---------- capabilities ---------- */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+@media(max-width:860px){.caps{grid-template-columns:1fr}}
+.cap{
+  padding:var(--s4) var(--s4) var(--s4) 0;
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.cap:last-child{border-right:none}
+@media(max-width:860px){.cap{border-right:none;padding-right:0}}
+.cap h3{
+  font-family:var(--display);font-weight:400;font-size:23px;
+  margin:0 0 var(--s2);letter-spacing:-.005em;
+}
+.cap ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.cap li{font-size:14px;color:var(--muted);display:flex;gap:9px;align-items:baseline}
+.cap li::before{content:"—";color:var(--faint);font-size:11px}
+
+/* ---------- result ---------- */
+.result{
+  display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);align-items:center;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:3px;padding:var(--s5);
+}
+@media(max-width:860px){.result{grid-template-columns:1fr;padding:var(--s4)}}
+.bars{display:flex;flex-direction:column;gap:var(--s3)}
+.bar-row{display:flex;flex-direction:column;gap:8px}
+.bar-lab{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:13px;color:var(--muted);
+}
+.bar-lab b{
+  font-family:var(--mono);font-size:15px;color:var(--ink);
+  font-variant-numeric:tabular-nums;font-weight:500;
+}
+.bar-track{height:8px;background:var(--surface-2);border-radius:1px;overflow:hidden}
+.bar-fill{height:100%;border-radius:1px}
+.bar-a{width:83.7%;background:var(--line-strong)}
+.bar-b{width:100%;background:var(--accent)}
+.lift{
+  font-family:var(--display);font-size:clamp(40px,5.5vw,64px);
+  line-height:1;letter-spacing:-.015em;color:var(--accent);margin-bottom:var(--s2);
+}
+.result p{font-size:15px;color:var(--muted);margin:0;max-width:42ch;line-height:1.65}
+
+/* ---------- process ---------- */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)}
+@media(max-width:900px){.proc{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.proc{grid-template-columns:1fr}}
+.step{border-top:2px solid var(--line-strong);padding-top:var(--s3)}
+.step:first-child{border-top-color:var(--accent)}
+.step-n{
+  font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+  color:var(--faint);margin-bottom:10px;
+}
+.step h3{font-size:17px;font-weight:500;margin:0 0 8px;letter-spacing:-.005em}
+.step p{font-size:14px;color:var(--muted);margin:0;line-height:1.55}
+
+/* ---------- case studies ---------- */
+.cases{display:flex;flex-direction:column;gap:var(--s2)}
+.case{
+  display:grid;grid-template-columns:auto 1fr auto;gap:var(--s3);
+  align-items:start;padding:var(--s4);
+  border:1px solid var(--line);border-radius:3px;
+  background:var(--surface);text-decoration:none;
+  transition:border-color .2s,transform .2s;
+}
+.case:hover{border-color:var(--accent);transform:translateY(-2px)}
+@media(max-width:700px){.case{grid-template-columns:1fr;gap:var(--s2)}}
+.case-tag{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--accent);
+  padding-top:5px;white-space:nowrap;
+}
+.case h3{font-size:20px;font-weight:500;margin:0 0 8px;letter-spacing:-.005em}
+.case p{font-size:14.5px;color:var(--muted);margin:0 0 var(--s2);line-height:1.6;max-width:60ch}
+.case-arrow{font-size:18px;color:var(--faint);transition:color .2s,transform .2s}
+.case:hover .case-arrow{color:var(--accent);transform:translate(3px,-3px)}
+@media(max-width:700px){.case-arrow{display:none}}
+.case-note{
+  font-family:var(--mono);font-size:11px;color:var(--faint);
+  margin-top:var(--s3);line-height:1.6;
+}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{
+  padding:var(--s3) 0;font-size:17px;cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;
+  align-items:center;gap:var(--s3);transition:color .15s;
+}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--accent)}
+summary::after{content:"+";font-family:var(--mono);font-size:18px;color:var(--faint)}
+details[open] summary::after{content:"–"}
+details[open] summary{color:var(--accent)}
+details p{
+  font-size:15px;color:var(--muted);line-height:1.7;
+  margin:0 0 var(--s3);max-width:66ch;padding-right:var(--s4);
+}
+
+/* ---------- contact ---------- */
+.contact{
+  border-top:1px solid var(--line);
+  padding:var(--s7) 0 var(--s6);
+}
+.contact-links{display:flex;flex-direction:column;gap:0;margin-top:var(--s4)}
+.clink{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:var(--s3) 0;border-bottom:1px solid var(--line);
+  text-decoration:none;font-size:17px;transition:padding-left .2s,color .2s;
+}
+.clink:first-child{border-top:1px solid var(--line)}
+.clink:hover{padding-left:10px;color:var(--accent)}
+.clink-k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.clink-v{display:flex;align-items:center;gap:10px}
+
+footer{
+  border-top:1px solid var(--line);padding:var(--s3) 0;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12.5px;color:var(--faint);gap:var(--s3);flex-wrap:wrap;
+}
+footer a{text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+
+/* ---------- compact case study cards ---------- */
+.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:1000px){.cs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.cs-grid{grid-template-columns:1fr}}
+
+.cs-card{
+  border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);overflow:hidden;
+  text-align:left;font:inherit;color:inherit;padding:0;
+  cursor:pointer;display:flex;flex-direction:column;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.cs-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(14,42,30,.12);
+  border-color:color-mix(in srgb,var(--accent-mid) 40%,transparent);
+}
+
+/* sage micro-banner */
+.cs-banner{
+  background:var(--accent-soft);
+  padding:14px 18px 16px;
+  border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;gap:12px;
+}
+.cs-banner-top{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.cs-niche{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent-mid);
+  background:var(--surface);border:1px solid var(--line);
+  padding:4px 9px;border-radius:100px;white-space:nowrap;
+}
+.cs-arrow{
+  font-size:14px;color:var(--accent-mid);line-height:1;
+  transition:transform .2s ease;flex-shrink:0;
+}
+.cs-card:hover .cs-arrow{transform:translate(3px,-3px)}
+.cs-metric{
+  font-family:var(--display);font-size:30px;
+  line-height:1;letter-spacing:-.015em;color:var(--accent-deep);
+  font-variant-numeric:tabular-nums;
+}
+.cs-metric-u{font-size:.48em}
+.cs-metric-l{
+  font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.4;
+}
+
+.cs-body{padding:20px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.cs-title{
+  font-family:var(--display);font-size:18px;font-weight:400;
+  color:var(--accent-deep);margin:0;line-height:1.25;letter-spacing:-.008em;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.cs-sum{
+  font-size:12.5px;color:var(--muted);line-height:1.55;margin:0;flex:1;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.cs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.cs-tag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;
+  background:var(--surface-2);border:1px solid var(--line);
+  color:var(--muted);padding:3px 8px;border-radius:4px;
+}
+
+/* ---------- modal ---------- */
+.cs-modal{
+  position:fixed;inset:0;z-index:200;
+  display:none;align-items:center;justify-content:center;padding:var(--s3);
+}
+.cs-modal[open]{display:flex}
+.cs-backdrop{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,.4);backdrop-filter:blur(4px);
+}
+.cs-panel{
+  position:relative;z-index:1;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;max-width:640px;width:100%;
+  max-height:86vh;overflow-y:auto;
+  box-shadow:0 30px 70px rgba(14,42,30,.32);
+}
+.cs-panel-head{
+  background:var(--accent-deep);color:#fff;
+  padding:28px 32px 24px;position:relative;
+}
+.cs-panel-niche{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:11px;
+}
+.cs-panel-title{
+  font-family:var(--display);font-size:clamp(23px,3vw,31px);
+  line-height:1.15;margin:0 0 9px;letter-spacing:-.012em;font-weight:400;
+}
+.cs-panel-client{font-size:13px;color:rgba(255,255,255,.7);margin:0}
+.cs-close{
+  position:absolute;top:18px;right:18px;
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(255,255,255,.15);border:none;color:#fff;
+  font-size:16px;cursor:pointer;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:background .18s;
+}
+.cs-close:hover{background:rgba(255,255,255,.28)}
+
+.cs-panel-body{padding:26px 32px 30px}
+.cs-block{margin-bottom:24px}
+.cs-block h4{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-mid);margin:0 0 10px;
+}
+.cs-block p{font-size:14px;line-height:1.65;color:var(--muted);margin:0}
+.cs-steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.cs-steps li{
+  font-size:13.5px;line-height:1.58;color:var(--muted);
+  padding-left:18px;position:relative;
+}
+.cs-steps li::before{
+  content:"";position:absolute;left:0;top:8px;
+  width:5px;height:5px;border-radius:50%;background:var(--accent-mid);
+}
+.cs-steps b{color:var(--ink);font-weight:600}
+.cs-results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:560px){.cs-results{grid-template-columns:1fr}}
+.cs-res{
+  background:var(--surface-2);border:1px solid var(--line);
+  border-radius:8px;padding:14px;
+}
+.cs-res-n{
+  font-family:var(--display);font-size:24px;line-height:1;
+  color:var(--accent);margin-bottom:6px;font-variant-numeric:tabular-nums;
+}
+.cs-res-l{font-size:11.5px;color:var(--muted);line-height:1.4}
+.cs-modal-cta{
+  border-top:1px solid var(--line);padding-top:20px;margin-top:26px;
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+}
+.cs-modal-cta .btn{font-size:13px;padding:10px 20px}
+
+
+/* ---------- projects ---------- */
+.pj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+@media(max-width:820px){.pj-grid{grid-template-columns:1fr}}
+.pj{
+  border:1px solid var(--line);border-radius:12px;
+  background:var(--surface);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.pj:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 32px rgba(14,42,30,.12);
+  border-color:color-mix(in srgb,var(--accent-mid) 40%,transparent);
+}
+.pj-shot{
+  background:var(--surface-2);border-bottom:1px solid var(--line);
+  padding:26px 22px;min-height:184px;
+  display:flex;flex-direction:column;justify-content:center;gap:9px;
+}
+.pj-kicker{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-mid);
+}
+.pj-subject{
+  font-size:14px;line-height:1.5;color:var(--ink);font-weight:500;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:6px;padding:11px 13px;
+}
+.pj-meta{
+  display:flex;gap:14px;font-family:var(--mono);font-size:10.5px;
+  color:var(--muted);flex-wrap:wrap;
+}
+.pj-meta b{color:var(--accent);font-weight:500}
+.pj-body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pj-title{
+  font-family:var(--display);font-size:21px;font-weight:400;
+  color:var(--accent-deep);margin:0;line-height:1.25;
+}
+.pj-desc{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0;flex:1}
+.pj-tags{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ---------- portrait ---------- */
+.portrait-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  gap:var(--s3);text-align:center;
+}
+.portrait{
+  width:220px;height:220px;border-radius:50%;
+  object-fit:cover;object-position:center 18%;
+  border:1px solid var(--line);
+  background:var(--accent-soft);
+  box-shadow:0 10px 34px rgba(14,42,30,.14);
+}
+.portrait-name{
+  font-family:var(--display);font-size:26px;
+  color:var(--accent-deep);margin:0;line-height:1.2;
+}
+.portrait-role{
+  font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent-mid);margin:0;
+}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+</style>
+</head>
+<body>
+
+
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">Zeeshan <em>Alam</em></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Experience</a>
+      <a href="#caps">Capabilities</a>
+      <a href="#results">Results</a>
+      <a href="#projects">Projects</a>
+      <a href="#cases">Case studies</a>
+    </div>
+    <a class="nav-cta" href="mailto:alam9763@gmail.com">Get in touch</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="status"><span class="dot"></span>Available for email &amp; CRM roles</div>
+        <h1>I build email programs that <em>convert</em>, and flows that <em>retain</em>.</h1>
+        <p class="lede">Klaviyo-certified email marketing specialist and CRM operations associate. I run the campaigns, automations, and QA that keep a subscriber list healthy — currently supporting a <strong>$100M+ U.S. e-commerce brand</strong>, remotely from Ranchi, India.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#cases">See the work</a>
+          <a class="btn btn-ghost" href="mailto:alam9763@gmail.com">Email me &#8599;</a>
+        </div>
+      </div>
+
+      <div class="specimen">
+        <div class="spec-head"><span>Recent sends</span><span>Open rate</span></div>
+        <div class="spec-row">
+          <div class="spec-subject"><span class="spec-flag"></span>Tuesday Drop: three picks, one restock</div>
+          <div class="spec-rate">39.82%</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-subject"><span class="spec-flag"></span>You left something &#8212; still yours for 24h</div>
+          <div class="spec-rate">37.10%</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-subject"><span class="spec-flag"></span>It&#8217;s been a while. Here&#8217;s 15% to come back.</div>
+          <div class="spec-rate">34.65%</div>
+        </div>
+        <div class="spec-row">
+          <div class="spec-subject"><span class="spec-flag"></span>Welcome &#8212; start here (1 of 4)</div>
+          <div class="spec-rate">41.20%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-n">64K+</div>
+        <div class="metric-l">Subscribers segmented &amp; managed</div>
+      </div>
+      <div class="metric">
+        <div class="metric-n">39.82%</div>
+        <div class="metric-l">Peak open rate, up from 33.34%</div>
+      </div>
+      <div class="metric">
+        <div class="metric-n">4/wk</div>
+        <div class="metric-l">Campaigns shipped, every week</div>
+      </div>
+      <div class="metric">
+        <div class="metric-n">5</div>
+        <div class="metric-l">Roles across marketing, banking &amp; ops</div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Klaviyo&nbsp; ✦ &nbsp;Mailchimp&nbsp; ✦ &nbsp;Omnisend&nbsp; ✦ &nbsp;Beehiiv&nbsp; ✦ &nbsp;Segmentation&nbsp; ✦ &nbsp;Lifecycle flows&nbsp; ✦ &nbsp;A/B testing&nbsp; ✦ &nbsp;Deliverability&nbsp; ✦ &nbsp;CRM operations&nbsp; ✦ &nbsp;Campaign analytics&nbsp; ✦ &nbsp;</span>
+    <span>Klaviyo&nbsp; ✦ &nbsp;Mailchimp&nbsp; ✦ &nbsp;Omnisend&nbsp; ✦ &nbsp;Beehiiv&nbsp; ✦ &nbsp;Segmentation&nbsp; ✦ &nbsp;Lifecycle flows&nbsp; ✦ &nbsp;A/B testing&nbsp; ✦ &nbsp;Deliverability&nbsp; ✦ &nbsp;CRM operations&nbsp; ✦ &nbsp;Campaign analytics&nbsp; ✦ &nbsp;</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">About</span>
+      <h2>One inbox. Two disciplines that <em>keep it working</em>.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="prose">
+        <p>My campaign work is about the send — subject lines, segmentation, timing, and the QA pass that catches a broken link before a subscriber does. My operations work is about what happens after: <strong>deliverability, list hygiene, and the reporting</strong> that tells you whether it actually worked.</p>
+        <p>That process discipline comes from outside email, too — handling compliance cases at HSBC, and billing and invoice operations on SAP at TCS and Genpact. I bring the same structured, checklist-driven approach to a Tuesday send calendar as I did to a fraud alert queue.</p>
+        <div class="chips" style="margin-top:24px">
+          <span class="chip">Segmentation &amp; personalization</span>
+          <span class="chip">A/B testing</span>
+          <span class="chip">Deliverability</span>
+          <span class="chip">CRO</span>
+          <span class="chip">Marketing analytics</span>
+          <span class="chip">Cross-team collaboration</span>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <div class="fact-k">Based in</div>
+          <div class="fact-v">Ranchi, India<small>Working remotely with U.S.-based teams.</small></div>
+        </div>
+        <div class="fact">
+          <div class="fact-k">Certification</div>
+          <div class="fact-v">Klaviyo Certified<small>Welcome, abandoned-cart, and retention flows.</small></div>
+        </div>
+        <div class="fact">
+          <div class="fact-k">Education</div>
+          <div class="fact-v">PGDBA, Finance<small>Symbiosis Centre for Distance Learning, Pune.</small></div>
+        </div>
+        <div class="fact">
+          <div class="fact-k">Also</div>
+          <div class="fact-v">B.Com, Accountancy Hons.<small>Banwarilal Bhalotia College, West Bengal.</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Experience</span>
+      <h2>Five roles, <em>one throughline</em>.</h2>
+      <p class="sec-sub">Process-driven execution, whether the job was a campaign calendar or a compliance case.</p>
+    </div>
+
+    <div class="tl">
+      <article class="tl-item">
+        <div class="tl-when">Apr 2025 —<br>Present</div>
+        <div>
+          <h3 class="tl-role">Content Marketing &amp; Email Operations Coordinator</h3>
+          <p class="tl-org">Contract, Remote — Austin, Texas, USA</p>
+          <ul class="tl-list">
+            <li>Executed and managed email campaigns end-to-end: scheduling, QA, and deployment</li>
+            <li>Built and optimized automated workflows — welcome, abandoned cart, retention — using segmentation</li>
+            <li>Collaborated with cross-functional teams to plan and execute multi-channel campaigns</li>
+            <li>Conducted market and trend research to support data-driven campaign strategy</li>
+          </ul>
+          <div class="chips">
+            <span class="chip chip-hi">64K+ list · 33.34% → 39.82% open rate</span>
+            <span class="chip">4 campaigns/week</span>
+            <span class="chip">A/B tested on Omnisend</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-when">Nov 2023 —<br>Jan 2025</div>
+        <div>
+          <h3 class="tl-role">Fraud Officer</h3>
+          <p class="tl-org">HSBC — Hyderabad, India</p>
+          <ul class="tl-list">
+            <li>Monitored customer transactions and identified fraud risks</li>
+            <li>Investigated alerts and verified customer activity</li>
+            <li>Raised compliance cases (FC-UAR) per internal policy</li>
+            <li>Handled escalations and maintained regulatory compliance reporting</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-when">Sep 2017 —<br>Jun 2023</div>
+        <div>
+          <h3 class="tl-role">Mathematics Instructor / Coaching Center Owner</h3>
+          <p class="tl-org">Zeero Campus</p>
+          <ul class="tl-list">
+            <li>Managed daily operations and scheduling for the center</li>
+            <li>Created structured lesson plans and tracked student performance</li>
+            <li>Owned communication and workflow coordination</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-when">May 2016 —<br>Mar 2017</div>
+        <div>
+          <h3 class="tl-role">Process Associate, Accounts Payable</h3>
+          <p class="tl-org">Genpact India Pvt. Ltd.</p>
+          <ul class="tl-list">
+            <li>Processed invoices using SAP for global clients</li>
+            <li>Verified purchase orders and payment details</li>
+            <li>Coordinated with vendors and internal teams to maintain SLA and quality standards</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-item">
+        <div class="tl-when">Jul 2012 —<br>Jul 2013</div>
+        <div>
+          <h3 class="tl-role">Information Processing Specialist</h3>
+          <p class="tl-org">Tata Consultancy Services (TCS)</p>
+          <ul class="tl-list">
+            <li>Worked on SAP CRM for billing processes</li>
+            <li>Resolved invoice discrepancies and supported case resolution</li>
+            <li>Maintained reporting using Excel</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="caps">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Capabilities</span>
+      <h2>Tools I run <em>campaigns</em> on.</h2>
+      <p class="sec-sub">Built for send day, and for the reporting that follows it.</p>
+    </div>
+    <div class="caps">
+      <div class="cap">
+        <h3>Email marketing</h3>
+        <ul>
+          <li>Klaviyo</li><li>Mailchimp</li><li>Omnisend</li><li>Beehiiv</li>
+          <li>Welcome, abandoned-cart &amp; retention flows</li><li>A/B testing</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h3>CRM &amp; operations</h3>
+        <ul>
+          <li>HubSpot CRM</li><li>SAP CRM</li>
+          <li>Segmentation &amp; personalization</li>
+          <li>Customer journey mapping</li><li>Cross-team collaboration</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h3>Analytics &amp; reporting</h3>
+        <ul>
+          <li>Campaign analytics</li><li>Email deliverability</li>
+          <li>Conversion rate optimization</li>
+          <li>Google Sheets</li><li>MS Excel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Results</span>
+      <h2>The number that moved: <em>open rate</em>.</h2>
+      <p class="sec-sub">Managing a 64,000+ contact list on Beehiiv, segmentation work lifted the open rate across the board.</p>
+    </div>
+    <div class="result">
+      <div class="bars">
+        <div class="bar-row">
+          <div class="bar-lab"><span>Before segmentation</span><b>33.34%</b></div>
+          <div class="bar-track"><div class="bar-fill bar-a"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-lab"><span>After segmentation</span><b>39.82%</b></div>
+          <div class="bar-track"><div class="bar-fill bar-b"></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="lift">+6.48<span style="font-size:.42em"> pts</span></div>
+        <p>Lift in open rate across a 64K list — driven by segmentation, plus three elements A/B tested every cycle: subject lines, thumbnail and header images, and CTA placement. Four campaigns shipped weekly, including a standing Tuesday product newsletter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Process</span>
+      <h2>How a send <em>actually ships</em>.</h2>
+      <p class="sec-sub">The same four steps, every week — which is why the calendar never slips.</p>
+    </div>
+    <div class="proc">
+      <div class="step">
+        <div class="step-n">Step 01</div>
+        <h3>Segment</h3>
+        <p>Pull the audience by behaviour and lifecycle stage, not by whoever is on the list this week.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">Step 02</div>
+        <h3>Build</h3>
+        <p>Copy, subject line, and template assembled — with the test variants defined before anything is scheduled.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">Step 03</div>
+        <h3>QA</h3>
+        <p>Links, merge tags, rendering, and suppression rules checked against a fixed pre-send checklist.</p>
+      </div>
+      <div class="step">
+        <div class="step-n">Step 04</div>
+        <h3>Report</h3>
+        <p>Opens, clicks, and deliverability reviewed after each send, and fed straight into the next one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Projects</span>
+      <h2>Recent <em>work</em>.</h2>
+      <p class="sec-sub">Campaigns and flows I&#8217;ve built and shipped.</p>
+    </div>
+
+    <div class="pj-grid">
+
+      <article class="pj">
+        <div class="pj-shot">
+          <div class="pj-kicker">Weekly Newsletter &#183; Beehiiv</div>
+          <div class="pj-subject">Tuesday Drop: three picks, one restock</div>
+          <div class="pj-meta">
+            <span>Open <b>39.82%</b></span>
+            <span>List <b>64K+</b></span>
+            <span>Cadence <b>Weekly</b></span>
+          </div>
+        </div>
+        <div class="pj-body">
+          <h3 class="pj-title">Tuesday Product Newsletter</h3>
+          <p class="pj-desc">A standing weekly send to a 64,000+ contact list. Segmented by engagement recency, with subject line, header image and CTA placement A/B tested every cycle.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Beehiiv</span>
+            <span class="cs-tag">Segmentation</span>
+            <span class="cs-tag">A/B Testing</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pj">
+        <div class="pj-shot">
+          <div class="pj-kicker">Lifecycle Flow &#183; Klaviyo</div>
+          <div class="pj-subject">Welcome &#8212; start here (1 of 4)</div>
+          <div class="pj-meta">
+            <span>Type <b>Welcome</b></span>
+            <span>Emails <b>4</b></span>
+            <span>Trigger <b>Signup</b></span>
+          </div>
+        </div>
+        <div class="pj-body">
+          <h3 class="pj-title">Welcome Series</h3>
+          <p class="pj-desc">A staged four-email introduction rather than a single confirmation, so new subscribers get context and expectations before the first promotional send arrives.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Klaviyo</span>
+            <span class="cs-tag">Onboarding</span>
+            <span class="cs-tag">Lifecycle</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pj">
+        <div class="pj-shot">
+          <div class="pj-kicker">Lifecycle Flow &#183; Klaviyo</div>
+          <div class="pj-subject">You left something &#8212; still yours for 24h</div>
+          <div class="pj-meta">
+            <span>Type <b>Cart</b></span>
+            <span>Trigger <b>Cart activity</b></span>
+            <span>Delay <b>Tuned</b></span>
+          </div>
+        </div>
+        <div class="pj-body">
+          <h3 class="pj-title">Abandoned Cart Recovery</h3>
+          <p class="pj-desc">Triggered on cart activity with delay timing tuned to purchase intent rather than a fixed interval applied to every shopper regardless of behaviour.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Klaviyo</span>
+            <span class="cs-tag">Conversion</span>
+            <span class="cs-tag">Automation</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pj">
+        <div class="pj-shot">
+          <div class="pj-kicker">Lifecycle Flow &#183; Klaviyo</div>
+          <div class="pj-subject">It&#8217;s been a while. Here&#8217;s 15% to come back.</div>
+          <div class="pj-meta">
+            <span>Type <b>Retention</b></span>
+            <span>Segment <b>Lapsed</b></span>
+            <span>Split <b>By recency</b></span>
+          </div>
+        </div>
+        <div class="pj-body">
+          <h3 class="pj-title">Retention &amp; Win-Back</h3>
+          <p class="pj-desc">Targets subscribers whose engagement dropped, segmented by how long they&#8217;ve been inactive instead of treating every lapsed contact the same way.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Klaviyo</span>
+            <span class="cs-tag">Win-back</span>
+            <span class="cs-tag">Retention</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Case studies</span>
+      <h2>The work, <em>documented</em>.</h2>
+      <p class="sec-sub">Audience, trigger logic, and outcome &#8212; click any card for the full breakdown.</p>
+    </div>
+
+    <div class="cs-grid">
+
+      <button class="cs-card" data-case="segmentation">
+        <div class="cs-banner">
+          <div class="cs-banner-top">
+            <span class="cs-niche">Newsletter &#183; 64K List</span>
+            <span class="cs-arrow">&#8599;</span>
+          </div>
+          <div>
+            <div class="cs-metric">+6.48<span class="cs-metric-u"> pts</span></div>
+            <div class="cs-metric-l">Open rate lift across the full file</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <h3 class="cs-title">Rebuilding a 64K list around behaviour</h3>
+          <p class="cs-sum">One undifferentiated send list was capping engagement at 33.34%. Segmenting by activity and lifecycle stage moved it to 39.82%.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Beehiiv</span>
+            <span class="cs-tag">Segmentation</span>
+            <span class="cs-tag">A/B Testing</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="cs-card" data-case="cadence">
+        <div class="cs-banner">
+          <div class="cs-banner-top">
+            <span class="cs-niche">Campaign Operations</span>
+            <span class="cs-arrow">&#8599;</span>
+          </div>
+          <div>
+            <div class="cs-metric">4<span class="cs-metric-u">/wk</span></div>
+            <div class="cs-metric-l">Shipped on schedule, zero slipped sends</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <h3 class="cs-title">A send calendar that doesn&#8217;t slip</h3>
+          <p class="cs-sum">Four campaigns weekly including a standing Tuesday newsletter, run on a fixed build-and-QA checklist carried over from compliance work.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Campaign Ops</span>
+            <span class="cs-tag">QA Process</span>
+            <span class="cs-tag">Omnisend</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="cs-card" data-case="flows">
+        <div class="cs-banner">
+          <div class="cs-banner-top">
+            <span class="cs-niche">Lifecycle Automation</span>
+            <span class="cs-arrow">&#8599;</span>
+          </div>
+          <div>
+            <div class="cs-metric">3<span class="cs-metric-u"> flows</span></div>
+            <div class="cs-metric-l">Welcome, abandoned cart, retention</div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <h3 class="cs-title">Automations that run without supervision</h3>
+          <p class="cs-sum">Welcome, abandoned-cart and retention sequences built on segmentation rules rather than blanket triggers, so timing matches intent.</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Klaviyo</span>
+            <span class="cs-tag">Lifecycle</span>
+            <span class="cs-tag">Retention</span>
+          </div>
+        </div>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODALS -->
+<div class="cs-modal" id="m-segmentation">
+  <div class="cs-backdrop" data-close></div>
+  <div class="cs-panel" role="dialog" aria-modal="true" aria-labelledby="t-segmentation">
+    <div class="cs-panel-head">
+      <button class="cs-close" data-close aria-label="Close">&#215;</button>
+      <div class="cs-panel-niche">Newsletter &#183; 64K List &#183; Beehiiv</div>
+      <h3 class="cs-panel-title" id="t-segmentation">Rebuilding a 64K list around behaviour, not batch</h3>
+      <p class="cs-panel-client">Content Marketing &amp; Email Operations Coordinator &#183; Contract, Remote (Austin, TX)</p>
+    </div>
+    <div class="cs-panel-body">
+      <div class="cs-block">
+        <h4>The bottleneck</h4>
+        <p>A 64,000+ contact list was being treated as a single audience. Every subscriber received the same content on the same schedule regardless of how recently they had opened, clicked, or bought &#8212; so engaged readers and long-dormant addresses were sent to identically. Open rate had settled at 33.34% and stopped moving.</p>
+      </div>
+      <div class="cs-block">
+        <h4>Tactical solution</h4>
+        <ul class="cs-steps">
+          <li><b>Segmented by engagement recency</b> &#8212; separating recently active subscribers from those who hadn&#8217;t opened in months, so send volume matched real interest instead of list size.</li>
+          <li><b>Split by lifecycle stage rather than signup date</b>, so new subscribers, regulars, and lapsed contacts received appropriately different content.</li>
+          <li><b>Ran a three-element A/B test every cycle</b> &#8212; subject lines, thumbnail and header images, and CTA placement &#8212; with variants defined before anything was scheduled.</li>
+          <li><b>Fed each result into the next send</b>, so the winning variant became the following week&#8217;s control rather than a one-off observation.</li>
+        </ul>
+      </div>
+      <div class="cs-block">
+        <h4>Measurable outcomes</h4>
+        <div class="cs-results">
+          <div class="cs-res"><div class="cs-res-n">39.82%</div><div class="cs-res-l">Peak open rate, up from 33.34%</div></div>
+          <div class="cs-res"><div class="cs-res-n">+6.48<span style="font-size:.5em"> pts</span></div><div class="cs-res-l">Absolute lift across the file</div></div>
+          <div class="cs-res"><div class="cs-res-n">64K+</div><div class="cs-res-l">Contacts segmented and managed</div></div>
+        </div>
+      </div>
+      <div class="cs-modal-cta">
+        <a class="btn btn-primary" href="mailto:alam9763@gmail.com">Discuss this work</a>
+        <button class="btn btn-ghost" data-close>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cs-modal" id="m-cadence">
+  <div class="cs-backdrop" data-close></div>
+  <div class="cs-panel" role="dialog" aria-modal="true" aria-labelledby="t-cadence">
+    <div class="cs-panel-head">
+      <button class="cs-close" data-close aria-label="Close">&#215;</button>
+      <div class="cs-panel-niche">Campaign Operations &#183; Weekly Cadence</div>
+      <h3 class="cs-panel-title" id="t-cadence">A send calendar that doesn&#8217;t slip</h3>
+      <p class="cs-panel-client">Content Marketing &amp; Email Operations Coordinator &#183; Contract, Remote (Austin, TX)</p>
+    </div>
+    <div class="cs-panel-body">
+      <div class="cs-block">
+        <h4>The bottleneck</h4>
+        <p>Shipping four campaigns a week &#8212; including a standing Tuesday product newsletter &#8212; leaves no room for improvised QA. A broken link, a bad merge tag, or an unsuppressed segment reaches tens of thousands of people at once, and there is no second pass once it&#8217;s out.</p>
+      </div>
+      <div class="cs-block">
+        <h4>Tactical solution</h4>
+        <ul class="cs-steps">
+          <li><b>Segment first</b> &#8212; the audience is pulled by behaviour and lifecycle stage before any copy is written, so the message is built for a defined group.</li>
+          <li><b>Build with variants pre-defined</b> &#8212; copy, subject line, and template assembled with the test set decided before scheduling, never bolted on afterwards.</li>
+          <li><b>Fixed pre-send checklist</b> &#8212; links, merge tags, rendering, and suppression rules verified the same way every time. That discipline came directly from raising compliance cases at HSBC and reconciling invoices on SAP at TCS and Genpact.</li>
+          <li><b>Report and recycle</b> &#8212; opens, clicks, and deliverability reviewed after each send and fed straight into the next brief.</li>
+        </ul>
+      </div>
+      <div class="cs-block">
+        <h4>Measurable outcomes</h4>
+        <div class="cs-results">
+          <div class="cs-res"><div class="cs-res-n">4<span style="font-size:.5em">/wk</span></div><div class="cs-res-l">Campaigns shipped on schedule</div></div>
+          <div class="cs-res"><div class="cs-res-n">3</div><div class="cs-res-l">Elements A/B tested per cycle</div></div>
+          <div class="cs-res"><div class="cs-res-n">64K+</div><div class="cs-res-l">Recipients per send cycle</div></div>
+        </div>
+      </div>
+      <div class="cs-modal-cta">
+        <a class="btn btn-primary" href="mailto:alam9763@gmail.com">Discuss this work</a>
+        <button class="btn btn-ghost" data-close>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cs-modal" id="m-flows">
+  <div class="cs-backdrop" data-close></div>
+  <div class="cs-panel" role="dialog" aria-modal="true" aria-labelledby="t-flows">
+    <div class="cs-panel-head">
+      <button class="cs-close" data-close aria-label="Close">&#215;</button>
+      <div class="cs-panel-niche">Lifecycle Automation &#183; Klaviyo</div>
+      <h3 class="cs-panel-title" id="t-flows">Automations that run without supervision</h3>
+      <p class="cs-panel-client">Content Marketing &amp; Email Operations Coordinator &#183; Contract, Remote (Austin, TX)</p>
+    </div>
+    <div class="cs-panel-body">
+      <div class="cs-block">
+        <h4>The bottleneck</h4>
+        <p>Campaigns reach whoever is on the list this week. Flows reach people at the moment their behaviour says they&#8217;re ready &#8212; but only if the trigger and timing are built around that behaviour. Blanket triggers send the right message at the wrong moment, which trains subscribers to ignore the sender.</p>
+      </div>
+      <div class="cs-block">
+        <h4>Tactical solution</h4>
+        <ul class="cs-steps">
+          <li><b>Welcome sequence</b> built as a staged introduction rather than a single confirmation, so new subscribers arrive with context before the first promotional send.</li>
+          <li><b>Abandoned-cart flow</b> triggered on cart activity with delay timing tuned to purchase intent, not a fixed interval applied to everyone.</li>
+          <li><b>Retention sequence</b> targeting subscribers whose engagement had dropped, segmented by how long they had been inactive rather than treating all lapsed contacts the same.</li>
+          <li><b>Segmentation and suppression rules applied across all three</b>, so a subscriber in one flow isn&#8217;t simultaneously receiving a conflicting campaign.</li>
+        </ul>
+      </div>
+      <div class="cs-block">
+        <h4>Measurable outcomes</h4>
+        <div class="cs-results">
+          <div class="cs-res"><div class="cs-res-n">3</div><div class="cs-res-l">Core flows built and optimised</div></div>
+          <div class="cs-res"><div class="cs-res-n">64K+</div><div class="cs-res-l">Contact base served by the flows</div></div>
+          <div class="cs-res"><div class="cs-res-n">Klaviyo</div><div class="cs-res-l">Certified &#183; also Mailchimp, Omnisend</div></div>
+        </div>
+      </div>
+      <div class="cs-modal-cta">
+        <a class="btn btn-primary" href="mailto:alam9763@gmail.com">Discuss this work</a>
+        <button class="btn btn-ghost" data-close>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Questions</span>
+      <h2>Before you <em>reach out</em>.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>What kind of roles are you looking for?</summary>
+        <p>Email Marketing, CRM Operations, and Marketing Automation — remote, or based in Ranchi, India. I'm most useful on teams that send regularly and need someone to own the calendar, the flows, and the QA that sits between them.</p>
+      </details>
+      <details>
+        <summary>Which platforms do you work in?</summary>
+        <p>Klaviyo primarily, and I'm Klaviyo certified. Also Mailchimp, Omnisend, and Beehiiv for sending, plus HubSpot and SAP CRM on the operations side.</p>
+      </details>
+      <details>
+        <summary>Do you work with U.S. time zones?</summary>
+        <p>Yes. I currently support a U.S. e-commerce brand on a contract based out of Austin, Texas, working remotely from India, and I schedule around U.S. business hours.</p>
+      </details>
+      <details>
+        <summary>What does the fraud and finance background have to do with email?</summary>
+        <p>More than it looks like. Compliance work at HSBC and invoice operations on SAP were both checklist-driven, high-consequence processes. Email is the same: a bad merge tag or an unsuppressed segment reaches thousands of people at once, and you only get one pass at it.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="wrap">
+  <section class="contact" id="contact">
+    <div class="portrait-wrap" style="margin-bottom:var(--s5)">
+      <img class="portrait" src="zeeshan.jpg" alt="Zeeshan Alam" width="220" height="220">
+      <div>
+        <p class="portrait-name">Zeeshan Alam</p>
+        <p class="portrait-role">Email Marketing &#183; CRM Operations</p>
+      </div>
+    </div>
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="eyebrow">Contact</span>
+      <h2>Have a list to grow, or a <em>lifecycle to build</em>?</h2>
+      <p class="sec-sub">Open to roles in Email Marketing, CRM Operations, and Marketing Automation — remote or based in Ranchi, India.</p>
+    </div>
+    <div class="contact-links">
+      <a class="clink" href="mailto:alam9763@gmail.com">
+        <span class="clink-k">Email</span>
+        <span class="clink-v">alam9763@gmail.com ↗</span>
+      </a>
+      <a class="clink" href="tel:+919832128468">
+        <span class="clink-k">Phone</span>
+        <span class="clink-v">+91 98321 28468 ↗</span>
+      </a>
+      <a class="clink" href="#top">
+        <span class="clink-k">Location</span>
+        <span class="clink-v">Ranchi, India</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Zeeshan Alam · Email Marketing Specialist · CRM Operations</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+</div>
+
+</main>
+
+<script>
+(function(){
+  var open = null;
+  function show(id){
+    var m = document.getElementById('m-' + id);
+    if(!m) return;
+    m.setAttribute('open','');
+    document.body.style.overflow = 'hidden';
+    open = m;
+    var c = m.querySelector('.cs-close');
+    if(c) c.focus();
+  }
+  function hide(){
+    if(!open) return;
+    open.removeAttribute('open');
+    document.body.style.overflow = '';
+    open = null;
+  }
+  document.querySelectorAll('.cs-card[data-case]').forEach(function(btn){
+    btn.addEventListener('click', function(){ show(btn.getAttribute('data-case')); });
+  });
+  document.querySelectorAll('[data-close]').forEach(function(el){
+    el.addEventListener('click', hide);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') hide();
+  });
+})();
+</script>
+
+</body>
+</html>
