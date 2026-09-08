@@ -113,7 +113,7 @@ img{max-width:100%}
 }
 h1{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(34px,5.2vw,64px);line-height:1.04;
+  font-size:clamp(30px,4.4vw,54px);line-height:1.04;
   letter-spacing:-.015em;margin:0 0 var(--s3);
   text-wrap:balance;max-width:16ch;
 }
@@ -626,9 +626,13 @@ footer a:hover{color:var(--accent)}
 /* ---------- scroll cards ---------- */
 .scroll-cards{
   display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);align-self:stretch;
-  min-height:520px;padding:24px;background:#0E2A1E;border-radius:10px;
+  min-height:520px;padding:24px;background:#0E2A1E;border-radius:10px;cursor:grab;
 }
-.sc-col{position:relative;overflow:hidden;height:520px}
+.scroll-cards:active{cursor:grabbing}
+.scroll-cards:hover .sc-track{animation-play-state:paused}
+.sc-col{position:relative;overflow-y:auto;height:520px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.35) transparent}
+.sc-col::-webkit-scrollbar{width:5px}
+.sc-col::-webkit-scrollbar-thumb{background:rgba(255,255,255,.35);border-radius:5px}
 .sc-col::before,.sc-col::after{
   content:"";position:absolute;left:0;right:0;height:80px;z-index:2;
   pointer-events:none;
@@ -639,8 +643,25 @@ footer a:hover{color:var(--accent)}
 .sc-track-up{animation:scroll-up 35s linear infinite}
 .sc-track-down{animation:scroll-down 40s linear infinite}
 .sc-track-up-slow{animation:scroll-up 45s linear infinite}
-.sc-track-up,.sc-track-down,.sc-track-up-slow{animation:none}
-.sc-track > .sc-card:nth-child(n+5){display:none}
+.sc-track{min-height:100%;padding-bottom:20px}
+.sc-track-up,.sc-track-down,.sc-track-up-slow{animation-duration:65s}
+.sc-track > .sc-card:nth-child(n+5){display:flex}
+.sc-card[data-case-link]{cursor:pointer}
+.sc-card[data-case-link]:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.certifications{background:var(--accent-deep);color:#fff}
+.certifications .eyebrow,.certifications h2 em{color:#72D8B9}
+.certifications .sec-sub{color:rgba(255,255,255,.72)}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.cert-card{display:flex;flex-direction:column;gap:14px;padding:0;border:1px solid rgba(255,255,255,.25);border-radius:8px;overflow:hidden;background:#fff;color:var(--ink);text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
+.cert-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.22);border-color:#72D8B9}
+.cert-card img{width:100%;height:240px;object-fit:cover;object-position:top center;background:#0E5658}
+.cert-card-body{padding:0 18px 20px}
+.cert-card h3{font-family:var(--display);font-size:22px;font-weight:400;margin:0 0 5px;color:var(--accent-deep)}
+.cert-card p{font-size:12px;color:var(--muted);margin:0}
+.cert-modal .cs-panel{max-width:1000px;background:#fff}
+.cert-viewer{width:100%;height:72vh;border:0;display:block;background:#fff}
+@media(max-width:760px){.cert-grid{grid-template-columns:1fr}.cert-card img{height:260px}}
+@media(max-width:560px){.cert-viewer{height:70vh}}
 .sc-card{
   border:1px solid rgba(255,255,255,.28);border-radius:8px;
   background:transparent;color:#fff;padding:18px 16px;
@@ -697,12 +718,14 @@ footer a:hover{color:var(--accent)}
   <div class="nav-in">
     <a class="brand" href="#top">Zee</a>
     <div class="nav-links">
+      <a href="https://zee-email-marketing.vercel.app/">Home</a>
       <a href="#about">About</a>
       <a href="#work" data-tab="work">Experience</a>
       <a href="#caps" data-tab="caps">Capabilities</a>
       <a href="#results" data-tab="results">Results</a>
       <a href="#projects">Projects</a>
       <a href="#cases">Case studies</a>
+      <a href="#certifications">Certifications</a>
     </div>
     <a class="nav-cta" href="mailto:alam9763@gmail.com">Get in touch</a>
     <a class="linkedin-cta" href="https://www.linkedin.com/in/zemailmarketing" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">in</a>
@@ -726,7 +749,7 @@ footer a:hover{color:var(--accent)}
       </div>
 
       <a class="cards-guide" href="#cases" aria-label="Open case studies">Open the work</a>
-      <a class="scroll-cards" href="#cases" aria-label="Open case studies">
+      <div class="scroll-cards" aria-label="Scrollable work cards">
         <!-- Column 1 — Build -->
         <div class="sc-col">
           <div class="sc-track sc-track-up">
@@ -927,7 +950,7 @@ footer a:hover{color:var(--accent)}
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
 
     <div class="metrics">
@@ -996,6 +1019,31 @@ footer a:hover{color:var(--accent)}
           <div class="fact-v">B.Com, Accountancy Hons.<small>Banwarilal Bhalotia College, West Bengal.</small></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="certifications">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Certifications</span>
+      <h2>Credentials that keep the work <em>grounded</em>.</h2>
+      <p class="sec-sub">Klaviyo certifications in practitioner, developer, and deliverability.</p>
+    </div>
+    <div class="cert-grid">
+      <button class="cert-card" data-cert="practitioner">
+        <img src="Klaviyo%20Practitioner%20certificate.png" alt="Klaviyo Practitioner certificate wallet pass">
+        <div class="cert-card-body"><h3>Klaviyo Practitioner</h3><p>Issued May 12, 2026 · Valid through May 12, 2028</p></div>
+      </button>
+      <button class="cert-card" data-cert="developer">
+        <img src="Klaviyo%20Developer%20Certificate_page-0001%20(1).jpg" alt="Klaviyo Developer certificate wallet pass">
+        <div class="cert-card-body"><h3>Klaviyo Developer</h3><p>Issued September 4, 2026 · Valid through September 4, 2028</p></div>
+      </button>
+      <button class="cert-card" data-cert="deliverability">
+        <img src="Klaviyo%20Deliverability%20certificate%20Pass.png" alt="Klaviyo Deliverability certificate wallet pass">
+        <div class="cert-card-body"><h3>Klaviyo Deliverability</h3><p>Issued September 6, 2026 · Valid through September 6, 2028</p></div>
+      </button>
     </div>
   </div>
 </section>
@@ -1402,6 +1450,29 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 
+<!-- CERTIFICATE VIEWERS -->
+<div class="cs-modal cert-modal" id="cert-practitioner">
+  <div class="cs-backdrop" data-close></div>
+  <div class="cs-panel" role="dialog" aria-modal="true" aria-labelledby="cert-title-practitioner">
+    <div class="cs-panel-head"><button class="cs-close" data-close aria-label="Close certificate">&#215;</button><h3 class="cs-panel-title" id="cert-title-practitioner">Klaviyo Practitioner Certificate</h3></div>
+    <iframe class="cert-viewer" src="Klaviyo%20Practitioner%20certificate.pdf" title="Klaviyo Practitioner Certificate"></iframe>
+  </div>
+</div>
+<div class="cs-modal cert-modal" id="cert-developer">
+  <div class="cs-backdrop" data-close></div>
+  <div class="cs-panel" role="dialog" aria-modal="true" aria-labelledby="cert-title-developer">
+    <div class="cs-panel-head"><button class="cs-close" data-close aria-label="Close certificate">&#215;</button><h3 class="cs-panel-title" id="cert-title-developer">Klaviyo Developer Certificate</h3></div>
+    <iframe class="cert-viewer" src="Klaviyo%20Developer%20Certificate.pdf" title="Klaviyo Developer Certificate"></iframe>
+  </div>
+</div>
+<div class="cs-modal cert-modal" id="cert-deliverability">
+  <div class="cs-backdrop" data-close></div>
+  <div class="cs-panel" role="dialog" aria-modal="true" aria-labelledby="cert-title-deliverability">
+    <div class="cs-panel-head"><button class="cs-close" data-close aria-label="Close certificate">&#215;</button><h3 class="cs-panel-title" id="cert-title-deliverability">Klaviyo Deliverability Certificate</h3></div>
+    <iframe class="cert-viewer" src="Klaviyo%20Deliverability%20Certificate.pdf" title="Klaviyo Deliverability Certificate"></iframe>
+  </div>
+</div>
+
 <!-- MODALS -->
 <div class="cs-modal" id="m-segmentation">
   <div class="cs-backdrop" data-close></div>
@@ -1605,6 +1676,43 @@ footer a:hover{color:var(--accent)}
     document.body.style.overflow = '';
     open = null;
   }
+  function showCertificate(id){
+    var modal = document.getElementById('cert-' + id);
+    if(!modal) return;
+    modal.setAttribute('open','');
+    document.body.style.overflow = 'hidden';
+    open = modal;
+    var close = modal.querySelector('.cs-close');
+    if(close) close.focus();
+  }
+  document.querySelectorAll('.cert-card[data-cert]').forEach(function(card){
+    card.addEventListener('click', function(){ showCertificate(card.getAttribute('data-cert')); });
+  });
+  document.querySelectorAll('.sc-card').forEach(function(card){
+    card.setAttribute('role','link');
+    card.setAttribute('tabindex','0');
+    function openWork(){ document.getElementById('cases').scrollIntoView({behavior:'smooth', block:'start'}); }
+    card.addEventListener('click', openWork);
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openWork(); }
+    });
+  });
+  document.querySelectorAll('.sc-col').forEach(function(column){
+    var dragging = false;
+    var startY = 0;
+    var startScroll = 0;
+    column.addEventListener('pointerdown', function(e){
+      dragging = true;
+      startY = e.clientY;
+      startScroll = column.scrollTop;
+      column.setPointerCapture(e.pointerId);
+    });
+    column.addEventListener('pointermove', function(e){
+      if(dragging) column.scrollTop = startScroll - (e.clientY - startY);
+    });
+    column.addEventListener('pointerup', function(){ dragging = false; });
+    column.addEventListener('pointercancel', function(){ dragging = false; });
+  });
   document.querySelectorAll('.cs-card[data-case]').forEach(function(btn){
     btn.addEventListener('click', function(){ show(btn.getAttribute('data-case')); });
   });
